@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Conversation Transcript</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f0f2f5;
+            --sender-bg: #0084ff;
+            --receiver-bg: #e4e6eb;
+            --text-main: #1c1e21;
+        }
+
+        body {
+            font-family: 'Sarabun', sans-serif;
+            background-color: var(--bg-color);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .chat-container {
+            width: 100%;
+            max-width: 500px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chat-header {
+            background: #ffffff;
+            padding: 15px 20px;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            background: #31a24c;
+            border-radius: 50%;
+        }
+
+        .chat-header h2 {
+            margin: 0;
+            font-size: 1.1rem;
+            color: var(--text-main);
+        }
+
+        .chat-window {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            height: 600px;
+            overflow-y: auto;
+            background: #ffffff;
+        }
+
+        .bubble {
+            max-width: 75%;
+            padding: 10px 15px;
+            border-radius: 18px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            position: relative;
+        }
+
+        .received {
+            align-self: flex-start;
+            background-color: var(--receiver-bg);
+            color: var(--text-main);
+            border-bottom-left-radius: 4px;
+        }
+
+        .sent {
+            align-self: flex-end;
+            background-color: var(--sender-bg);
+            color: white;
+            border-bottom-right-radius: 4px;
+        }
+
+        .label {
+            font-size: 0.7rem;
+            margin-bottom: 4px;
+            font-weight: 600;
+            color: #65676b;
+            display: block;
+        }
+
+        .sent .label {
+            text-align: right;
+            color: #0084ff;
+        }
+
+        /* Scrollbar */
+        .chat-window::-webkit-scrollbar { width: 6px; }
+        .chat-window::-webkit-scrollbar-thumb { background: #bcc0c4; border-radius: 10px; }
+    </style>
+</head>
+<body>
+
+<div class="chat-container">
+    <div class="chat-header">
+        <div class="status-dot"></div>
+        <h2>บันทึกการสนทนา: AI in Education</h2>
+    </div>
+    
+    <div class="chat-window">
+        <!-- Message 1 -->
+        <div class="bubble received">
+            <span class="label">Person A</span>
+            แกเห็นสไลด์บนจอป่ะ ที่เขาถามเรื่อง AI อ่ะ... ปกติแกเคยใช้ AI ช่วยทำงานบ้างเปล่า?
+        </div>
+
+        <!-- Message 2 -->
+        <div class="bubble sent">
+            <span class="label">Person B</span>
+            ใช้ดิ ส่วนใหญ่เราก็ใช้พวกสรุปเนื้อหาที่ต้องอ่านเยอะๆ บางทีก็ใช้พวก NotebookLM อ่ะ สะดวกดีนะ
+        </div>
+
+        <!-- Message 3 -->
+        <div class="bubble received">
+            <span class="label">Person A</span>
+            เออจริง แต่เราแอบรำคาญเวลาบางทีมันตอบมั่ว แกเจอปัญหาเวลาใช้ AI บ้างป่ะ?
+        </div>
+
+        <!-- Message 4 -->
+        <div class="bubble sent">
+            <span class="label">Person B</span>
+            เจอประจำแหละ บางทีข้อมูลก็ไม่อัปเดต แถมตอบวนไปวนมา ต้องมานั่งเช็กตลอดเลยเนี่ย... แล้วในห้องเรียนน่ะ แกเคยลองให้เพื่อนๆ หรือคนอื่นใช้ AI ทำอะไรบ้างไหม?
+        </div>
+
+        <!-- Message 5 -->
+        <div class="bubble received">
+            <span class="label">Person A</span>
+            ก็เคยนะ เราเคยลองให้เขาใช้ AI ทำพวกสไลด์ หรือจำลองสถานการณ์ดูอ่ะ ก็ดูสนุกดีนะ
+        </div>
+
+        <!-- Message 6 -->
+        <div class="bubble sent">
+            <span class="label">Person B</span>
+            แต่มันก็น่าห่วงนะ พอคนอื่นใช้ AI แล้วแกเจอปัญหาอะไรบ้างป่ะ?
+        </div>
+
+        <!-- Message 7 -->
+        <div class="bubble received">
+            <span class="label">Person A</span>
+            ก็มีบ้างนะ บางคนก๊อปปี้มาวางแล้วส่งเลย โดยไม่ปรับคำพูดอะไรเลย มันอ่านแล้วเข้าใจยากจริงๆ... แล้วถ้าขอพรได้ แกอยากให้ AI มันช่วยอะไรเพิ่มอีกในห้องเรียน?
+        </div>
+
+        <!-- Message 8 -->
+        <div class="bubble sent">
+            <span class="label">Person B</span>
+            อยากให้ช่วยออกแบบข้อมูลให้เข้ากับคนแต่ละคนแบบเป๊ะๆ โดยที่อาจารย์ไม่ต้องมานั่งเหนื่อยทำเองอ่ะ น่าจะดีนะ
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
